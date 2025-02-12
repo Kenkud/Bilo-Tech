@@ -1,0 +1,94 @@
+/* Services.module.css */
+
+.servicesHero {
+    position: relative;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  
+  .heroContent {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .servicesTitle {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  .heroText {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #bbb;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Services List */
+  .servicesListSection {
+    padding: 4rem 2rem;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #000; /* same black as main site */
+  }
+  
+  .servicesListWrapper {
+    display: grid;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .serviceCard {
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .serviceCard:hover {
+    transform: scale(1.02);
+  }
+  
+  .serviceImage {
+    border-radius: 4px;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .serviceTitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .serviceDescription {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #bbb;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .servicesTitle {
+      font-size: 2.2rem;
+    }
+  
+    .heroText {
+      font-size: 1rem;
+    }
+  
+    .serviceTitle {
+      font-size: 1.2rem;
+    }
+  }
+  

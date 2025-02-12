@@ -1,0 +1,66 @@
+/* About.module.css */
+
+/* Overall container for the about page content */
+.container {
+    background-color: #000;
+    color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 6rem; /* so content isn't hidden under sticky header */
+  }
+  
+  /* Hero / Title Section */
+  /* About.module.css */
+
+/* Hero Section */
+.hero {
+    padding: 6rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  
+  /* Main Content */
+  .contentSection {
+    padding: 4rem 2rem;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  
+  .contentWrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .paragraph {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #bbb;
+  }
+  
+  /* Responsive breakpoints */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2.2rem;
+    }
+    .heading {
+      font-size: 1.4rem;
+    }
+  }
+  

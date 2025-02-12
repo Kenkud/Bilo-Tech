@@ -1,0 +1,403 @@
+/* =========================================
+   GLOBAL & CONTAINER
+========================================= */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+/* =========================================
+   HEADER & NAVIGATION
+========================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 1rem 2rem;
+  transition: background 0.3s ease;
+  z-index: 999;
+}
+
+.scrolled {
+  background: #000; /* More opaque when scrolled */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  object-fit: contain;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* hidden on large screens */
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 0.4rem;
+  z-index: 1001;
+  margin-right: 4rem;
+}
+.bar {
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger:hover .bar {
+  background-color: #ad0279;
+}
+
+/* Desktop Nav Links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.navLinks li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 450;
+  font-size: 1.12rem;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.navLinks li a:hover {
+  color: #ad0279;
+}
+
+/* Active state for mobile nav */
+.navActive {
+  transform: translateY(0) !important;
+  color:#ad0279
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 700;
+}
+
+.heroSubTitle {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  color: #ddd;
+  font-weight: 400;
+}
+
+/* =========================================
+   ABOUT, SERVICES, CASE STUDIES, CONTACT
+========================================= */
+.aboutSection,
+.servicesSection,
+.caseStudiesSection,
+.contactSection,
+.quoteSection {
+  position: relative;
+  padding: 6rem 2rem;
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.sectionContent {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.sectionText {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #bbb;
+}
+
+/* About background + overlay */
+.aboutSection {
+  background: url("/about-bg.jpg") center center/cover no-repeat;
+}
+.aboutOverlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.aboutContent {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================
+   CTA BUTTONS
+========================================= */
+.learnMoreButton,
+.contactButton,
+.ctaButton {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.learnMoreButton:hover,
+.contactButton:hover,
+.ctaButton:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* =========================================
+   AI SERVICES CAROUSEL
+========================================= */
+.servicesCarousel {
+  width: 100%;
+  overflow: hidden;
+  margin: 2rem 0;
+  position: relative;
+}
+
+/* Sliding track that moves horizontally */
+.slidingTrack {
+  display: flex;
+  gap: 2rem;
+  width: calc(10 * 200px * 2); /* # of services x card width x duplicates */
+  animation: scrollLeft 25s linear infinite;
+}
+
+/* Each service card style */
+.serviceCard {
+  min-width: 200px;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+.serviceCard:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes for horizontal auto-scroll */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Footer Nav (Two-Column) */
+.footerNav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem; /* space above the copyright */
+  background-color: #151415;
+  padding-bottom: 2rem;
+}
+.footerNav > div {
+  flex: 1;
+  margin-right: 1rem;
+}
+.footerNav > div:last-child {
+  margin-right: 0;
+}
+.footerNav h4 {
+  font-size: 1.4rem;
+  margin: 2rem auto 1rem;
+  color: #ffffff;
+  text-decoration: underline;
+}
+.footerNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footerNav li {
+  margin-bottom: 1.5rem;
+}
+.footerNav li a {
+  color: #90888f;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footerNav li a:hover {
+  color: #900054ee;
+}
+
+/* =========================================
+   SPECIAL ANIMATION
+========================================= */
+.animatePeriod {
+  display: inline-block;
+  animation: popIn 2s ease-in-out infinite alternate;
+  color: rgb(207, 2, 2);
+}
+@keyframes popIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+/* =========================================
+   MEDIA QUERIES
+========================================= */
+/* Up to 1024px: show hamburger, collapse nav, etc. */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-200%);
+    margin-left: 0;
+  }
+
+  .navLinks li {
+    margin: 1rem 1rem;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .heroSubTitle {
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.7rem;
+  }
+}
+
+/* Up to 600px: Stack footer columns, etc. */
+@media (max-width: 600px) {
+  .footerNav {
+    flex-direction: column;
+  }
+  .footerNav > div {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  .footerNav > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Up to 500px: smaller hero titles, etc. */
+@media (max-width: 500px) {
+  .heroTitle {
+    font-size: 1.7rem;
+  }
+  .heroSubTitle {
+    font-size: 1rem;
+  }
+}
