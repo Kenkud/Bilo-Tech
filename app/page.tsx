@@ -68,6 +68,7 @@ export default function Home() {
           {/* Example of your auto-scrolling or marquee-like layout for services */}
           <div className={styles.servicesCarousel}>
             <div className={styles.slidingTrack}>
+              <div className={styles.serviceCard}>Mobile & Desktop Apps Design & Development</div>
               <div className={styles.serviceCard}>AI Consultation & Strategy</div>
               <div className={styles.serviceCard}>Predictive Analytics</div>
               <div className={styles.serviceCard}>NLP & Chatbots</div>
